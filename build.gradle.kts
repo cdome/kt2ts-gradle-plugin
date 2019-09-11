@@ -11,7 +11,7 @@ buildscript {
     }
 }
 plugins {
-    kotlin("jvm") version "1.3.31"
+    kotlin("jvm") version "1.3.50"
     `maven-publish`
     `java-gradle-plugin`
     id("org.sonarqube") version "2.7.1"
@@ -25,19 +25,19 @@ repositories {
 }
 
 group = "se.jensim.kt2ts"
-version = findProperty("releaseVersion") ?: "DEV"
+version = "0.11.1-cdome-SNAPSHOT"
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(gradleApi())
-    compileOnly("com.github.ntrrgc:ts-generator:1.1.1") {
+    compileOnly("com.github.ntrrgc:ts-generator:1.1.2-cdome-SNAPSHOT") {
         exclude(group = "org.jetbrains.kotlin")
     }
     implementation("org.reflections:reflections:0.9.11")
 
     testImplementation(kotlin("test-junit"))
     testImplementation(kotlin("reflect"))
-    testImplementation("com.github.ntrrgc:ts-generator:1.1.1")
+    testImplementation("com.github.ntrrgc:1.1.2-cdome-SNAPSHOT)
     testImplementation("org.hamcrest:hamcrest-core:2.1")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0")
 }
